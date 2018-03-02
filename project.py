@@ -49,16 +49,17 @@ def decide_order(projects, dependencies):
 					dummy = projects[0]
 		else:
 			dummy = dummy.parent[0]
+			
+if __name__ == '__main__':
+	a = project('a')
+	b = project('b')
+	c = project('c')
+	d = project('d')
+	e = project('e')
+	f = project('f')
 
-a = project('a')
-b = project('b')
-c = project('c')
-d = project('d')
-e = project('e')
-f = project('f')
+	projects = [a, b, c, d, e, f]
+	dependencies = [(a, d), (f, b), (b, d), (f, a), (d, c)]
 
-projects = [a, b, c, d, e, f]
-dependencies = [(a, d), (f, b), (b, d), (f, a), (d, c)]
-
-decide_order(projects, dependencies)
+	decide_order(projects, dependencies)
 
